@@ -8,8 +8,11 @@ services:
       - ../../project:/var/www/html
     tty: true
     stdin_open: true
-    ports:
-      - "8080:80"
+    networks:
+      - caddy_network
+    labels:
+      caddy: laravel.localhost
+      caddy.reverse_proxy: "{{upstreams 80}}"
   
   nginx:
     depends_on:
@@ -22,3 +25,8 @@ services:
       - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf:ro
       - ./nginx/entrypoint.sh:/workspace/entrypoint.sh:ro
     entrypoint: /workspace/entrypoint.sh
+
+networks:
+  caddy_network:
+    external: true
+    name: caddy_network
