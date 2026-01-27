@@ -7,4 +7,4 @@ COPY flake.* /deps-shared/
 
 RUN nix profile add path:/deps-shared
 
-ENTRYPOINT [ "/workspace/dependencies/dist/php-laravel/entrypoint.sh" ]
+ENTRYPOINT [ "/workspace/dependencies/php-laravel/entrypoint.sh" ]

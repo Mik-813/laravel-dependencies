@@ -2,6 +2,6 @@
 
 set -e
 
-DIST="/workspace/dependencies/dist/php-laravel"
+DIST="/workspace/dependencies/php-laravel"
 
 php-fpm -F -R -y $DIST/php-fpm.conf
