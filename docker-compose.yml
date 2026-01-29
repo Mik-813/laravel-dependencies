@@ -11,7 +11,7 @@ services:
     networks:
       - caddy_network
     labels:
-      caddy: laravel.localhost
+      caddy: ${HTTP_HOST}
       caddy.reverse_proxy: "{{upstreams 80}}"
   
   nginx:
