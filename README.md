@@ -18,7 +18,6 @@ Create `.env`
 cp .env.example .env
 ```
 Edit `.env` variables
-> By default the name hostname is `localhost` (for Google OAuth2 compatability)
 ```bash
 docker compose up -d
 ```
