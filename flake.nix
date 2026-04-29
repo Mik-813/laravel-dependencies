@@ -19,9 +19,11 @@
             tokenizer
             xml
             zip
+            xdebug
           ]));
           extraConfig = ''
-            memory_limit = 512M
+            xdebug.mode = coverage
+            xdebug.start_with_request = yes
           '';
         };
         deps = [ 
