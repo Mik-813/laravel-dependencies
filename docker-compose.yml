@@ -14,7 +14,7 @@ services:
     labels:
       caddy: ${HTTP_HOST}
       caddy.handle: /api/*
-      caddy.reverse_proxy: "{{upstreams 80}}"
+      caddy.handle.reverse_proxy: "{{upstreams 80}}"
   
   nginx:
     depends_on:
