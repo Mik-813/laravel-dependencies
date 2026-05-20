@@ -12,7 +12,7 @@ services:
     networks:
       - caddy_network
     labels:
-      caddy: ${HTTP_HOST}
+      caddy: ${APP_URL}
       caddy.handle: /api/*
       caddy.handle.reverse_proxy: "{{upstreams 80}}"
   
