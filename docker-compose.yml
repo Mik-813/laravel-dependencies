@@ -16,6 +16,9 @@ services:
       caddy: ${APP_URL}
       caddy.handle: /api/*
       caddy.handle.reverse_proxy: "{{upstreams 80}}"
+      caddy.handle.import: caddy_headers
+      caddy.handle.header.Content-Security-Policy: "\"default-src 'none'; frame-ancestors 'none'; sandbox;\""
+      
   
   nginx:
     depends_on:
